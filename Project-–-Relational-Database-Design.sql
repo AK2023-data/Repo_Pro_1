@@ -98,10 +98,12 @@ select * from user_has_role
 
 --2. Delete all the data from each of the tables.
 
-delete from Role
-delete from Status
-delete from User_account
-delete from user_has_role 
-delete from user_has_status
-
+--Here we can not delete the data directly from any table becuase of parent-child relationship between tables. 
+--So, first will delete the data from parent table and then will delete the data from child/dependent table.
+  
+Truncate table Role;
+Truncate table Status;
+Truncate table User_account;
+Truncate table user_has_role; 
+Truncate table user_has_status;
 ---------------------------------------------------------------------
